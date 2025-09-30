@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernanda Urquiza - Artista Textil</title>
+    <!-- Incluye Tailwind CSS para un diseño moderno y minimalista -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Fuentes para títulos y textos
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Poppins', 'serif']
+                    },
+                    colors: {
+                        'neutral-light': '#F5F5F4', // zinc-100
+                        'neutral-dark': '#1C1917',  // zinc-900
+                        'neutral-medium': '#A1A1AA', // zinc-400
+                        'accent-subtle': '#D4D4D4', // zinc-300
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-neutral-light text-neutral-dark font-sans leading-relaxed">
+
+    <!-- Sección de bienvenida inicial a pantalla completa (Splash Screen) -->
+    <section id="intro-screen" class="relative w-full h-screen flex flex-col items-center justify-center text-white">
+        <!-- La imagen principal que cubre toda la pantalla -->
+        <img src="https://i.postimg.cc/mk0mMdfS/01.jpg" alt="Obra de arte de Fernanda Urquiza" class="absolute inset-0 w-full h-full object-cover z-0">
+        <!-- Capa de superposición para un efecto de transparencia -->
+        <div class="absolute inset-0 bg-neutral-dark/20 z-10"></div>
+
+        <!-- Nombre en la esquina superior izquierda -->
+        <div class="absolute top-8 left-8 z-20">
+            <h1 class="text-lg font-bold tracking-tight font-serif">FERNANDA URQUIZA</h1>
+        </div>
+
+        <!-- Menú de navegación principal centrado -->
+        <nav class="relative z-20">
+            <ul class="text-center font-serif text-sm space-y-2">
+                <li><a href="#" data-section="proyectos" class="nav-link-splash hover:underline transition-colors">Proyectos</a></li>
+                <li><a href="#" data-section="talleres" class="nav-link-splash hover:underline transition-colors">Talleres</a></li>
+                <li><a href="#" data-section="informacion" class="nav-link-splash hover:underline transition-colors">Información</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Encabezado de la página que aparece después del splash screen -->
+    <header id="main-header" class="hidden sticky top-0 z-50 bg-neutral-light/90 backdrop-blur-sm shadow-sm py-4">
+        <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="#" id="back-to-splash" class="text-lg font-bold tracking-tight font-serif cursor-pointer">Fernanda Urquiza</a>
+            <div class="space-x-4 text-xs font-medium">
+                <a href="#" data-section="proyectos" class="text-neutral-dark hover:text-neutral-medium transition-colors">Proyectos</a>
+                <a href="#" data-section="talleres" class="text-neutral-dark hover:text-neutral-medium transition-colors">Talleres</a>
+                <a href="#" data-section="informacion" class="text-neutral-dark hover:text-neutral-medium transition-colors">Información</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal (oculto por defecto) -->
+    <main id="main-content" class="hidden mb-24 space-y-24">
+        
+        <!-- Sección de Proyectos (galería principal) -->
+        <section id="proyectos" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyecto 1: Hilo Vegetal -->
+                <a href="#" data-project="hilo-vegetal" class="project-link group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://i.postimg.cc/nhZv5sx2/98.jpg" alt="Hilo Vegetal - Descripción del Proyecto" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-base font-semibold tracking-wide font-serif">Hilo Vegetal</h3>
+                    </div>
+                </a>
+                <!-- Proyecto 2: pixeles podridos -->
+                <a href="#" data-project="pixeles-podridos" class="project-link group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://i.postimg.cc/Prmq3Gf0/DSCF2164.jpg" alt="pixeles podridos - Descripción del Proyecto" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-base font-semibold tracking-wide font-serif">pixeles podridos</h3>
+                    </div>
+                </a>
+                <!-- Proyecto 3: Ya sea en silencio o en voz alta -->
+                <a href="#" data-project="silencio-voz-alta" class="project-link group relative overflow-hidden shadow-lg hover:hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://i.postimg.cc/Rh84hRRr/03.jpg" alt="Ya sea en silencio o en voz alta - Descripción del Proyecto" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-base font-semibold tracking-wide font-serif">Ya sea en silencio o en voz alta</h3>
+                    </div>
+                </a>
+                <!-- Proyecto 4: líquenes -->
+                <a href="#" data-project="liquenes" class="project-link group relative overflow-hidden shadow-lg hover:hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://i.postimg.cc/VL7ygDQX/IMG-8648.jpg" alt="líquenes - Descripción del Proyecto" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-base font-semibold tracking-wide font-serif">líquenes</h3>
+                    </div>
+                </a>
+                <!-- Proyecto 5: La poesía no es un lujo -->
+                <a href="#" data-project="poesia" class="project-link group relative overflow-hidden shadow-lg hover:hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://i.postimg.cc/7PWQhZzy/La-poesia-no-es-un-lujo.jpg" alt="La poesía no es un lujo - Descripción del Proyecto" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-base font-semibold tracking-wide font-serif">La poesía no es un lujo</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección de detalles del proyecto Hilo Vegetal (oculto por defecto) -->
+        <section id="hilo-vegetal-detail" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <button id="back-to-proyectos" class="mb-8 text-neutral-dark/80 hover:text-neutral-dark transition-colors flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Volver a Proyectos</span>
+            </button>
+            <div class="max-w-3xl mx-auto space-y-8 text-center">
+                <p class="text-xs leading-relaxed text-neutral-dark/80">
+                    En esta exposición, realizada en la galería de Studio Kura en agosto de 2025, la artista presenta Hilos vegetales, una obra que se adentra en el universo subterráneo de las raíces de las plantas. A través de un enfoque botánico, la pieza explora las nociones de conexión y comunicación, poniendo en relieve aquello que habitualmente permanece oculto: los vínculos invisibles que se tejen entre los individuos bajo tierra, así como el lazo esencial con la propia tierra que los sostiene y nutre.
+                    <br><br>
+                    Este proyecto fue posible gracias al financiamiento del Fondo Nacional de Desarrollo Cultural y las Artes (FONDART, Chile).
+                </p>
+            </div>
+            <!-- Galería de imágenes del proyecto con nuevo layout -->
+            <div class="mt-8 columns-2 md:columns-3 gap-4">
+                <img src="https://i.postimg.cc/BnD2XSnk/00.jpg" alt="Imagen 1 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/0N0m0VmC/01.jpg" alt="Imagen 2 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/CKgk83Z1/04.jpg" alt="Imagen 3 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/Gh6kL8dv/05.jpg" alt="Imagen 4 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/6Tx5SXx4/13.jpg" alt="Imagen 5 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/mZJjd2hp/83.jpg" alt="Imagen 6 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/TPdJyKH1/84.jpg" alt="Imagen 7 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/Ss56tDQY/85.jpg" alt="Imagen 8 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/nzMKk6xt/97.jpg" alt="Imagen 9 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/nhZv5sx2/98.jpg" alt="Imagen 10 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/3J2XnXsW/99.jpg" alt="Imagen 11 del proyecto Hilo Vegetal" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+            </div>
+        </section>
+
+        <!-- Sección de detalles del proyecto Pixeles Podridos (oculto por defecto) -->
+        <section id="pixeles-podridos-detail" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <button id="back-to-proyectos-2" class="mb-8 text-neutral-dark/80 hover:text-neutral-dark transition-colors flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Volver a Proyectos</span>
+            </button>
+            <div class="max-w-3xl mx-auto space-y-8 text-center">
+                <p class="text-xs leading-relaxed text-neutral-dark/80">
+                   Pixeles Podridos es un proyecto realizado en conjunto con la artista chilena Colomba Pino. El bordado es el lenguaje que nos reúne y desde el cual hemos construido nuestra colaboración a lo largo de los años, a pesar de vivir en diferentes lugares.
+                   <br><br>
+                   El proyecto nace como una exploración a distancia en torno a las naturalezas muertas de frutas, a partir de fotografías tomadas por Colomba en Chile y por mí en México. A través de este diálogo, nos interesó cuestionar las características tradicionales de la naturaleza muerta y cómo esta técnica puede entrar en relación —o en tensión— con nuestro contexto contemporáneo.
+                   <br><br>
+                   La exposición propone un conflicto entre lo que entendemos por “naturaleza” en la práctica artística y los modos de producción presentes en los procesos agrícolas. La muerte se hace visible allí donde los alimentos que sostienen la vida humana —y no humana— dejan de ser comestibles, dejan de alimentar.
+                   <br><br>
+                   El proyecto fue presentado en marzo de 2025 en la galería Escrituras Experimentales en Ciudad de México.
+                </p>
+            </div>
+            <div class="mt-8 columns-2 md:columns-3 gap-4">
+                <img src="https://i.postimg.cc/SQHX176Y/DSCF2093.jpg" alt="Imagen 1 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/XYbr4jDV/DSCF2096.jpg" alt="Imagen 2 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/sDSMkQm6/DSCF2099.jpg" alt="Imagen 3 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/05zMCHwq/DSCF2106.jpg" alt="Imagen 4 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/x13cdwWL/DSCF2109.jpg" alt="Imagen 5 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/8CksfyS9/DSCF2120.jpg" alt="Imagen 6 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/vmPTrW8B/DSCF2126.jpg" alt="Imagen 7 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/FR7RD71x/DSCF2129.jpg" alt="Imagen 8 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/VvtNPpqr/DSCF2132.jpg" alt="Imagen 9 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/1t2zTsq1/DSCF2146.jpg" alt="Imagen 10 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/Df40GJ9v/DSCF2148.jpg" alt="Imagen 11 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/gk9JHcpv/DSCF2156.jpg" alt="Imagen 12 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/Prmq3Gf0/DSCF2164.jpg" alt="Imagen 13 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/vZhZyWVz/DSCF2167.jpg" alt="Imagen 14 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/sgsgbnvx/DSCF2168.jpg" alt="Imagen 15 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/0NN2ybGq/DSCF2173.jpg" alt="Imagen 16 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/fbgWtD5S/DSCF2184.jpg" alt="Imagen 17 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/zBbzT6Pt/DSCF2185.jpg" alt="Imagen 18 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/50hxgghx/DSCF2186.jpg" alt="Imagen 19 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/7PzPhvzb/DSCF2204.jpg" alt="Imagen 20 del proyecto Pixeles Podridos" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+            </div>
+        </section>
+
+        <!-- Sección de detalles del proyecto Ya sea en silencio o en voz alta (oculto por defecto) -->
+        <section id="silencio-voz-alta-detail" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <button id="back-to-proyectos-3" class="mb-8 text-neutral-dark/80 hover:text-neutral-dark transition-colors flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Volver a Proyectos</span>
+            </button>
+            <div class="max-w-3xl mx-auto space-y-8 text-center">
+                <p class="text-xs leading-relaxed text-neutral-dark/80">
+                    Esta exposición se creó en el marco de una
+                    residencia artística en Casa Lü, en Ciudad de
+                    México, durante los meses de mayo y junio
+                    de 2023. Está basada en una investigación
+                    textil sobre las ideas culturalmente asociadas
+                    al velo en América Latina y en cómo estas
+                    se extrapolan a oficios como el bordado y el
+                    tejido.
+                    <br><br>
+                    Exposición: 12-20 de junio de 2023, Casa
+                    Lü, Ciudad de México.
+                    <br><br>
+                    El proyecto comenzó con una observación
+                    sobre la flexibilidad de los textiles. La tela
+                    posee una particularidad única: aunque es
+                    un objeto sólido, tiene una flexibilidad y
+                    adaptabilidad que, en ocasiones, se asemejan
+                    al agua. La tela se mueve, se pliega, se arruga,
+                    se impregna y se adapta.
+                    <br><br>
+                    El velo siempre ha tenido un significado que
+                    trasciende sus cualidades textiles. Representa
+                    la feminidad, la virginidad, la castidad y la
+                    pureza. Es interesante observar cómo un
+                    simple pedazo de tela puede convertirse en una
+                    representación fiel de una opresión constante,
+                    disfrazada de ligereza y semitransparencia.
+                    <br><br>
+                    Esta exposición se basa en un ejercicio
+                    visual centrado en el textil: ¿qué sucede si lo
+                    consideramos un objeto de investigación? Se
+                    aborda la tela como un sujeto de estudio, y no
+                    solo como un lienzo o material. Por un lado,
+                    esto surge del interés por su comportamiento
+                    como sólido y como líquido. Por otro, busca
+                    analizar cómo este material doméstico da
+                    lugar a paisajes, a nuevos lugares a través de la
+                    observación, traducida mediante el bordado.
+                    <br><br>
+                    Al experimentar con diferentes materiales, la
+                    tela sufre transformaciones, como si se tratara
+                    de cualquier otra sustancia en un laboratorio.
+                    Algunas reacciones hacen que el velo pierda
+                    su flexibilidad, lo petrifican y convierten su
+                    movimiento en algo estático. Otras permiten
+                    que conserve su movimiento, modificándolo.
+                    <br><br>
+                    De estas observaciones nace la interpretación
+                    bordada. Abstracciones de sombra y
+                    luz, geometrías, pliegues. Bordados que
+                    representan estas formas, paisajes que resignifican
+                    el velo como nada más que un
+                    pedazo de tela.
+                </p>
+            </div>
+            <div class="mt-8 columns-2 md:columns-3 gap-4">
+                <img src="https://i.postimg.cc/MHhJqG6q/01.jpg" alt="Imagen 1 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/RFpzpR23/02.jpg" alt="Imagen 2 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/Rh84hRRr/03.jpg" alt="Imagen 3 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/wvjpkP48/04.jpg" alt="Imagen 4 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/NGyMq9bh/06-copia.jpg" alt="Imagen 5 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/XJdzdg4S/07.jpg" alt="Imagen 6 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/6qsNN35w/08.jpg" alt="Imagen 7 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/Bb3wg1n8/09.jpg" alt="Imagen 8 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/pVQSdksK/11.jpg" alt="Imagen 9 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/PxQMdVdx/12.jpg" alt="Imagen 10 del proyecto Silencio o en voz alta" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+            </div>
+            <p class="mt-4 text-xs text-center text-neutral-dark/80">© Pedro Pablo Stevenson Vergara 2023</p>
+        </section>
+
+        <!-- Sección de detalles del proyecto líquenes (oculto por defecto) -->
+        <section id="liquenes-detail" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <button id="back-to-proyectos-4" class="mb-8 text-neutral-dark/80 hover:text-neutral-dark transition-colors flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Volver a Proyectos</span>
+            </button>
+            <div class="max-w-3xl mx-auto space-y-8 text-center">
+                <p class="text-xs leading-relaxed text-neutral-dark/80">
+                    Durante 2022, tuve la oportunidad de trabajar
+                    en el taller de Juana Gómez, donde fuimos
+                    invitados a explorar nuestros intereses a través
+                    del bordado combinado con la técnica de
+                    impresión fotográfica sobre distintos textiles.
+                    El resultado de esta exploración culminó en
+                    una exposición colectiva en la galería NAC en
+                    Santiago, Chile, en colaboración con el grupo
+                    de bordadoras que formaban parte del taller.
+                    Durante el proceso creativo, decidí enfocarme
+                    en las texturas naturales del sur de Chile,
+                    particularmente en cortes de distintas
+                    cortezas de los árboles Araucaria del Parque
+                    Nacional Conguillío, ubicado en la región de La
+                    Araucanía. Las imágenes resultantes muestran
+                    cómo el color y el hilo se entrelazan y se
+                    fusionan para crear una sola imagen.
+                    Además, realicé una exploración formal de
+                    las luces, sombras y texturas de la corteza,
+                    transformándolas en figuras visibles a través
+                    del bordado.
+                </p>
+            </div>
+            <div class="mt-8 columns-2 md:columns-3 gap-4">
+                <img src="https://i.postimg.cc/xCKDPQnd/IMG-8645.avif" alt="Imagen 1 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/0yrTBDPF/IMG-8647.avif" alt="Imagen 2 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/VL7ygDQX/IMG-8648.jpg" alt="Imagen 3 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/3RjVvZF4/IMG-8649.avif" alt="Imagen 4 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/vTQjL60P/IMG-8650.avif" alt="Imagen 5 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/6qYPH5SB/IMG-8651.avif" alt="Imagen 6 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/28SM1hby/IMG-8653.avif" alt="Imagen 7 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/pXc7zrzZ/IMG-8654.avif" alt="Imagen 8 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/RZ3YRmTz/IMG-8657.jpg" alt="Imagen 9 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/gJpBmZbY/IMG-8658.jpg" alt="Imagen 10 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/mkXdYpzD/IMG-8659.avif" alt="Imagen 11 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/T1Y7WvPF/IMG-8660.avif" alt="Imagen 12 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/66Y1xqjX/IMG-8661.avif" alt="Imagen 13 del proyecto Líquenes" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+            </div>
+            <p class="mt-4 text-xs text-center text-neutral-dark/80">© Pedro Pablo Stevenson Vergara 2022</p>
+        </section>
+
+        <!-- Sección de detalles del proyecto La poesía no es un lujo (oculto por defecto) -->
+        <section id="poesia-detail" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <button id="back-to-proyectos-5" class="mb-8 text-neutral-dark/80 hover:text-neutral-dark transition-colors flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span>Volver a Proyectos</span>
+            </button>
+            <div class="max-w-3xl mx-auto space-y-8 text-center">
+                <p class="text-xs leading-relaxed text-neutral-dark/80">
+                    En 2022, colaboré con el colectivo «homóloga
+                    ediciones» en Santiago, Chile. Este colectivo
+                    de edición autogestionado busca establecer
+                    un vínculo entre el arte y la literatura, invitando
+                    a artistas y escritores emergentes a publicar
+                    juntos.
+                    <br><br>
+                    Para la publicación de marzo de 2023, trabajamos
+                    junto a Melissa Cid, quien tradujo los
+                    ensayos de Audre Lorde *”La poesía no es
+                    un lujo”* y *”Los usos de lo erótico”*. Como
+                    parte de esta colaboración, se crearon cuatro
+                    bordados que hacen referencia a las ideas presentadas
+                    por Lorde en sus ensayos, los cuales
+                    presento en las imágenes siguientes.
+                </p>
+            </div>
+            <div class="mt-8 columns-2 md:columns-3 gap-4">
+                <img src="https://i.postimg.cc/CLbJ74Zm/dd5806a9-d918-41f0-8b03-c93aecfba714.jpg" alt="Imagen 1 del proyecto La poesía no es un lujo" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/9QVbnqZV/IMG-9592.jpg" alt="Imagen 2 del proyecto La poesía no es un lujo" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/pT9JFQbQ/IMG-9593.avif" alt="Imagen 3 del proyecto La poesía no es un lujo" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/yYhXcY5G/IMG-9597.avif" alt="Imagen 4 del proyecto La poesía no es un lujo" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/T2grv3RP/Captura-de-Pantalla-2025-05-19-a-la-s-19-56-33.png" alt="Imagen 5 del proyecto La poesía no es un lujo" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/X7W9j6Jk/Captura-de-Pantalla-2025-05-19-a-la-s-19-56-39.png" alt="Imagen 6 del proyecto La poesía no es un lujo" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/nhc7mKqs/Captura-de-Pantalla-2025-05-19-a-la-s-19-56-43.png" alt="Imagen 7 del proyecto La poesía no es un lujo" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/fTvmkqSn/Captura-de-Pantalla-2025-05-19-a-la-s-19-56-47.png" alt="Imagen 8 del proyecto La poesía no es un lujo" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+            </div>
+            <p class="mt-4 text-xs text-center text-neutral-dark/80">© Pedro Pablo Stevenson Vergara 2022</p>
+        </section>
+
+        <!-- Sección 4: Talleres de bordado -->
+        <section id="talleres" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="max-w-3xl mx-auto space-y-8 text-center">
+                <p class="text-xs leading-relaxed text-neutral-dark/80">
+                    Imparto talleres de bordado contemporáneo, bordado libre y técnicas tradicionales japonesas como el Boro. Estos espacios se han realizado en Santiago de Chile, Ciudad de México y París, y buscan no solo transmitir los conocimientos de la técnica, sino también generar instancias de encuentro, creación y momentos de calidad compartida.
+                    <br><br>
+                    Cada taller es una oportunidad para experimentar con el bordado desde una mirada contemporánea, aprender en conjunto y explorar la potencia creativa de la aguja y el hilo.
+                    <br><br>
+                    Si te interesa organizar un taller, participar o recibir más información, puedes contactarme directamente.
+                </p>
+            </div>
+            <div class="mt-8 columns-2 md:columns-3 gap-4">
+                <img src="https://i.postimg.cc/jdZqL9Tf/IMG-4438.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/JzF1QkG4/IMG-7199.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/9Q0mTpXn/IMG-7208.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/85QN2gR2/IMG-7216.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/qRs40DQz/IMG-7218.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/MHtwfcCw/IMG-7220.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/J0Rmh3dK/IMG-7221.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/PfMTRcP7/IMG-7223.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/CLLSTN8x/IMG-7228.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/13bQF1j8/IMG-7241.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/PxQs0prD/IMG-7242.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/L54KS9nb/IMG-7246.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/qqmfMPKM/IMG-7247.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/BZNfgKz9/IMG-7252.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/15thYzxg/IMG-7262.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/RZJr4bZ4/IMG-7263.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/NFjVVdnh/IMG-8392.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/sxH8RpFM/IMG-8393.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/d1Bp4b4m/IMG-8396.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/T2tBmXyT/IMG-8397.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/RVqyLbfK/IMG-8404.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/SN55T775/IMG-8410.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/7Z2RpGKL/IMG-8430.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="https://i.postimg.cc/q7HF0JFx/IMG-8435.jpg" alt="Imagen de taller de bordado" class="w-full h-auto mb-4 break-inside-avoid cursor-pointer" onclick="openLightbox(this.src)">
+            </div>
+        </section>
+
+        <!-- Sección 3: CV e Información de contacto -->
+        <section id="informacion" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="max-w-2xl mx-auto space-y-8">
+                <!-- Imagen de perfil grande y rectangular -->
+                <div class="flex flex-col items-center">
+                    <img src="https://i.postimg.cc/B6Z9NDz8/DSCF0928.jpg" alt="Foto de perfil de Fernanda Urquiza" class="w-full h-auto rounded-lg shadow-xl cursor-pointer" onclick="openLightbox(this.src)">
+                    <p class="mt-2 text-xs text-center leading-relaxed text-neutral-dark/80">© Pedro Pablo Stevenson Vergara 2024</p>
+                </div>
+                <!-- Texto del Statement -->
+                <p class="text-xs text-center leading-relaxed text-neutral-dark/80">
+                    Mi trabajo tiene como punto de partida dos inspiraciones fundamentales. En primer lugar, el interés por el origen de las cosas. La trama que compone a un tejido simple, las pequeñas piezas que juntas forman una herramienta, los procesos químicos que separan sustancias y las transforman en otras. Esto también se ve reflejado en la naturaleza: Los diferentes componentes de un bosque, los pétalos de una planta y su relación con el tallo, las capas de tierra que podemos observar en una montaña. Este asombro y goce de entender cómo se construyen las cosas se une a mi segunda inspiración: El hacer con las manos. Una de las razones fundamentales de por qué mi proyecto artístico se basa principalmente en bordados y arte textil es el rescate del quehacer manual. Lograr texturas, formas y relieves que no se logran con otras herramientas y que tienen la virtud de ser hechas a mano es una de las principales fuentes de inspiración y el valor que le entrego a mi proceso artístico. Su esencia radica en una experimentación manual y exploración de técnicas que marcan nuestra historia.
+                </p>
+                <!-- Datos de contacto y redes sociales -->
+                <div class="text-center space-y-2">
+                    <p class="font-semibold text-base">Fernanda Sofía Urquiza Carter</p>
+                    <p class="text-xs">París, Francia y Santiago de Chile</p>
+                    <p class="text-xs">+33 620 36 26 82</p>
+                    <div class="flex justify-center items-center space-x-4">
+                        <!-- Enlace de correo con ícono -->
+                        <a href="mailto:fernandaurquizac@gmail.com" class="text-neutral-dark hover:text-neutral-medium transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                        </a>
+                        <!-- Enlace de Instagram con ícono -->
+                        <a href="https://www.instagram.com/fernandaurquizac/" target="_blank" rel="noopener noreferrer" class="text-neutral-dark hover:text-neutral-medium transition-colors">
+                            <img src="https://i.postimg.cc/tRwqGPX0/Sin-ti-tulo.png" alt="Instagram Icon" class="w-6 h-6">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para el visor de imágenes (Lightbox) -->
+    <div id="lightbox-modal" class="hidden fixed inset-0 bg-neutral-dark/80 z-[100] flex items-center justify-center p-4" onclick="closeLightbox()">
+        <img id="lightbox-image" src="" alt="Imagen ampliada" class="max-w-full max-h-full">
+    </div>
+
+    <!-- Pie de página -->
+    <footer id="main-footer" class="hidden bg-neutral-dark text-neutral-light py-8">
+        <div class="max-w-5xl mx-auto text-center text-xs">
+            <p>&copy; <span id="year"></span> Fernanda Urquiza. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const introScreen = document.getElementById('intro-screen');
+        const mainHeader = document.getElementById('main-header');
+        const mainContent = document.getElementById('main-content');
+        const mainFooter = document.getElementById('main-footer');
+        const navLinks = document.querySelectorAll('.nav-link-splash, #main-header a[data-section]');
+        const backToSplash = document.getElementById('back-to-splash');
+        
+        const sections = document.querySelectorAll('#main-content > section');
+        const projectLinks = document.querySelectorAll('.project-link');
+        const backToProyectosButton = document.getElementById('back-to-proyectos');
+        const backToProyectosButton2 = document.getElementById('back-to-proyectos-2');
+        const backToProyectosButton3 = document.getElementById('back-to-proyectos-3');
+        const backToProyectosButton4 = document.getElementById('back-to-proyectos-4');
+        const backToProyectosButton5 = document.getElementById('back-to-proyectos-5');
+        
+        const lightboxModal = document.getElementById('lightbox-modal');
+        const lightboxImage = document.getElementById('lightbox-image');
+
+        // Función para mostrar una sección principal (Proyectos, Talleres, etc.)
+        function showMainSection(sectionId) {
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        // Función para mostrar los detalles de un proyecto específico
+        function showProjectDetail(projectId) {
+            document.getElementById('proyectos').classList.add('hidden');
+            const projectDetailSection = document.getElementById(projectId);
+            if (projectDetailSection) {
+                projectDetailSection.classList.remove('hidden');
+                window.scrollTo({ top: 0 }); // Cambio para desplazamiento instantáneo
+            } else {
+                // Si la sección del proyecto no existe, volver a la galería de proyectos
+                showMainSection('proyectos');
+            }
+        }
+
+        // Función para abrir el lightbox
+        window.openLightbox = (imageSrc) => {
+            lightboxImage.src = imageSrc;
+            lightboxModal.classList.remove('hidden');
+        };
+
+        // Función para cerrar el lightbox
+        window.closeLightbox = () => {
+            lightboxModal.classList.add('hidden');
+            lightboxImage.src = '';
+        };
+
+        // Escuchar la tecla 'Escape' para cerrar el lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightboxModal.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                introScreen.classList.add('hidden');
+                mainHeader.classList.remove('hidden');
+                mainContent.classList.remove('hidden');
+                mainFooter.classList.remove('hidden');
+                
+                const sectionId = link.getAttribute('data-section');
+                showMainSection(sectionId);
+                window.scrollTo({ top: 0 }); // Cambio para desplazamiento instantáneo
+            });
+        });
+
+        projectLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const projectId = link.getAttribute('data-project');
+                // Nombra las secciones de detalles de proyectos con el sufijo "-detail"
+                showProjectDetail(projectId + '-detail');
+            });
+        });
+
+        // Funciones para los botones de volver a proyectos
+        function addBackToProjectsListener(button) {
+            if (button) {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelectorAll('#proyectos ~ section').forEach(section => {
+                        section.classList.add('hidden');
+                    });
+                    showMainSection('proyectos');
+                    window.scrollTo({ top: 0 }); // Cambio para desplazamiento instantáneo
+                });
+            }
+        }
+
+        addBackToProjectsListener(backToProyectosButton);
+        addBackToProjectsListener(backToProyectosButton2);
+        addBackToProjectsListener(backToProyectosButton3);
+        addBackToProjectsListener(backToProyectosButton4);
+        addBackToProjectsListener(backToProyectosButton5);
+
+        backToSplash.addEventListener('click', (e) => {
+            e.preventDefault();
+            introScreen.classList.remove('hidden');
+            mainHeader.classList.add('hidden');
+            mainContent.classList.add('hidden');
+            mainFooter.classList.add('hidden');
+            
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            window.scrollTo({ top: 0 }); // Cambio para desplazamiento instantáneo
+        });
+    </script>
+</body>
+</html>
