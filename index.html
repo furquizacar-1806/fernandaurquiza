@@ -426,7 +426,22 @@
             const navLinks = document.querySelectorAll('.nav-link-splash, #main-header a[data-section]');
             const projectLinks = document.querySelectorAll('.project-link');
             const backBtns = document.querySelectorAll('.back-btn');
+            const backToSplash = document.getElementById('back-to-splash');
             
+            // Función para volver a la página de inicio (splash screen)
+            if (backToSplash) {
+                backToSplash.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (introScreen) introScreen.classList.remove('hidden');
+                    if (mainHeader) mainHeader.classList.add('hidden');
+                    if (mainContent) mainContent.classList.add('hidden');
+                    if (mainFooter) mainFooter.classList.add('hidden');
+                    
+                    document.querySelectorAll('#main-content > section').forEach(s => s.classList.add('hidden'));
+                    window.scrollTo({ top: 0 });
+                });
+            }
+
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
