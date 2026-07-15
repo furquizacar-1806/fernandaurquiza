@@ -39,14 +39,29 @@
     <section id="intro-screen" class="relative w-full h-screen flex flex-col items-center justify-center text-white">
         <img src="https://i.postimg.cc/NMmB6NHK/NEW-HAND-LAB-31.jpg" alt="Fernanda Urquiza" class="absolute inset-0 w-full h-full object-cover z-0">
         <div class="absolute inset-0 bg-neutral-dark/20 z-10"></div>
+        
         <div class="absolute top-8 left-8 z-20">
             <h1 class="text-lg font-bold tracking-tight font-serif">FERNANDA URQUIZA</h1>
         </div>
+
+        <!-- Botón de idioma principal -->
+        <div class="absolute top-8 right-8 z-20 font-serif text-sm tracking-wide">
+            <button onclick="setLang('es')" class="lang-btn-es font-bold hover:text-neutral-medium transition-colors">ES</button>
+            <span class="mx-2">/</span>
+            <button onclick="setLang('en')" class="lang-btn-en opacity-70 hover:opacity-100 transition-colors">EN</button>
+        </div>
+
         <nav class="relative z-20">
             <ul class="text-center font-serif text-sm space-y-2">
-                <li><a href="#" data-section="proyectos" class="nav-link-splash hover:underline transition-colors">Proyectos</a></li>
-                <li><a href="#" data-section="talleres" class="nav-link-splash hover:underline transition-colors">Talleres</a></li>
-                <li><a href="#" data-section="informacion" class="nav-link-splash hover:underline transition-colors">Información</a></li>
+                <li><a href="#" data-section="proyectos" class="nav-link-splash hover:underline transition-colors">
+                    <span class="lang-es">Proyectos</span><span class="lang-en hidden">Projects</span>
+                </a></li>
+                <li><a href="#" data-section="talleres" class="nav-link-splash hover:underline transition-colors">
+                    <span class="lang-es">Talleres</span><span class="lang-en hidden">Workshops</span>
+                </a></li>
+                <li><a href="#" data-section="informacion" class="nav-link-splash hover:underline transition-colors">
+                    <span class="lang-es">Información</span><span class="lang-en hidden">Information</span>
+                </a></li>
             </ul>
         </nav>
     </section>
@@ -55,10 +70,21 @@
     <header id="main-header" class="hidden sticky top-0 z-50 bg-neutral-light/90 backdrop-blur-sm shadow-sm py-4">
         <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <a href="#" id="back-to-splash" class="text-lg font-bold tracking-tight font-serif cursor-pointer">Fernanda Urquiza</a>
-            <div class="space-x-4 text-xs font-medium">
-                <a href="#" data-section="proyectos" class="text-neutral-dark hover:text-neutral-medium transition-colors">Proyectos</a>
-                <a href="#" data-section="talleres" class="text-neutral-dark hover:text-neutral-medium transition-colors">Talleres</a>
-                <a href="#" data-section="informacion" class="text-neutral-dark hover:text-neutral-medium transition-colors">Información</a>
+            <div class="flex items-center space-x-4 text-xs font-medium">
+                <a href="#" data-section="proyectos" class="text-neutral-dark hover:text-neutral-medium transition-colors">
+                    <span class="lang-es">Proyectos</span><span class="lang-en hidden">Projects</span>
+                </a>
+                <a href="#" data-section="talleres" class="text-neutral-dark hover:text-neutral-medium transition-colors">
+                    <span class="lang-es">Talleres</span><span class="lang-en hidden">Workshops</span>
+                </a>
+                <a href="#" data-section="informacion" class="text-neutral-dark hover:text-neutral-medium transition-colors">
+                    <span class="lang-es">Información</span><span class="lang-en hidden">Information</span>
+                </a>
+                <div class="border-l border-neutral-medium pl-4 flex space-x-2">
+                    <button onclick="setLang('es')" class="lang-btn-es font-bold hover:text-neutral-dark transition-colors">ES</button>
+                    <span class="text-neutral-medium">/</span>
+                    <button onclick="setLang('en')" class="lang-btn-en opacity-70 hover:opacity-100 transition-colors">EN</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -73,60 +99,73 @@
                     <a href="#" data-project="radiacion" class="project-link group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full">
                         <img src="https://i.postimg.cc/pVQPy6vw/NEW-HAND-LAB-47.jpg" alt="Radiación" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block">Radiación (2026)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-es">Radiación (2026)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-en hidden">Radiación (2026)</span>
                         </div>
                     </a>
-                    <h3 class="mt-3 text-sm font-medium tracking-wide font-serif md:hidden">Radiación (2026)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-es">Radiación (2026)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-en hidden">Radiación (2026)</h3>
                 </div>
                 <!-- Hilo Vegetal -->
                 <div class="flex flex-col items-center">
                     <a href="#" data-project="hilo-vegetal" class="project-link group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full">
                         <img src="https://i.postimg.cc/0j7jNkns/DSCF4355.jpg" alt="Hilo Vegetal" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block">Hilo Vegetal (2025)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-es">Hilo Vegetal (2025)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-en hidden">Hilo Vegetal (2025)</span>
                         </div>
                     </a>
-                    <h3 class="mt-3 text-sm font-medium tracking-wide font-serif md:hidden">Hilo Vegetal (2025)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-es">Hilo Vegetal (2025)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-en hidden">Hilo Vegetal (2025)</h3>
                 </div>
                 <!-- Pixeles Podridos -->
                 <div class="flex flex-col items-center">
                     <a href="#" data-project="pixeles-podridos" class="project-link group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full">
                         <img src="https://i.postimg.cc/Prmq3Gf0/DSCF2164.jpg" alt="Pixeles Podridos" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block">Pixeles Podridos (2025)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-es">Pixeles Podridos (2025)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-en hidden">Pixeles Podridos (2025)</span>
                         </div>
                     </a>
-                    <h3 class="mt-3 text-sm font-medium tracking-wide font-serif md:hidden">Pixeles Podridos (2025)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-es">Pixeles Podridos (2025)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-en hidden">Pixeles Podridos (2025)</h3>
                 </div>
+                
                 <!-- Silencio o en voz alta -->
                 <div class="flex flex-col items-center">
                     <a href="#" data-project="silencio-voz-alta" class="project-link group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full">
                         <img src="https://i.postimg.cc/Rh84hRRr/03.jpg" alt="Ya sea en silencio o en voz alta" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block">Ya sea en silencio o en voz alta (2023)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-es">Ya sea en silencio o en voz alta (2023)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-en hidden">Ya sea en silencio o en voz alta (2023)</span>
                         </div>
                     </a>
-                    <h3 class="mt-3 text-sm font-medium tracking-wide font-serif md:hidden">Ya sea en silencio o en voz alta (2023)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-es">Ya sea en silencio o en voz alta (2023)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-en hidden">Ya sea en silencio o en voz alta (2023)</h3>
                 </div>
                 <!-- Líquenes -->
                 <div class="flex flex-col items-center">
                     <a href="#" data-project="liquenes" class="project-link group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full">
                         <img src="https://i.postimg.cc/VL7ygDQX/IMG-8648.jpg" alt="Líquenes" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block">Líquenes (2022)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-es">Líquenes (2022)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-en hidden">Líquenes (2022)</span>
                         </div>
                     </a>
-                    <h3 class="mt-3 text-sm font-medium tracking-wide font-serif md:hidden">Líquenes (2022)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-es">Líquenes (2022)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-en hidden">Líquenes (2022)</h3>
                 </div>
                 <!-- Poesía -->
                 <div class="flex flex-col items-center">
                     <a href="#" data-project="poesia" class="project-link group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 w-full">
                         <img src="https://i.postimg.cc/7PWQhZzy/La-poesia-no-es-un-lujo.jpg" alt="La poesía no es un lujo" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-neutral-dark/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block">La poesía no es un lujo (2022)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-es">La poesía no es un lujo (2022)</span>
+                            <span class="text-white text-lg font-medium tracking-wide font-serif text-center px-4 hidden md:block lang-en hidden">La poesía no es un lujo (2022)</span>
                         </div>
                     </a>
-                    <h3 class="mt-3 text-sm font-medium tracking-wide font-serif md:hidden">La poesía no es un lujo (2022)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-es">La poesía no es un lujo (2022)</h3>
+                    <h3 class="mt-3 text-xs md:text-sm font-medium tracking-wide font-serif md:hidden lang-en hidden">La poesía no es un lujo (2022)</h3>
                 </div>
             </div>
         </section>
@@ -137,12 +176,14 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
-                <span>Volver a Proyectos</span>
+                <span class="lang-es">Volver a Proyectos</span>
+                <span class="lang-en hidden">Back to Projects</span>
             </button>
             <div class="w-full mb-8">
                 <img src="https://i.postimg.cc/pVQPy6vw/NEW-HAND-LAB-47.jpg" alt="Radiación" class="w-full h-auto object-cover shadow-sm">
             </div>
-            <div class="max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+            <!-- Español -->
+            <div class="lang-es max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
                 <p class="break-inside-avoid"><strong>Radiación</strong><br>
                 New Hand Lab, Portugal, 2026.<br>
                 Dimensiones: Ø280 cm, Ø260 cm y Ø240 cm x 135 cm de alto<br>
@@ -150,6 +191,16 @@
                 <p class="break-inside-avoid">A partir del centro de un círculo, los radios se expanden para introducir la paleta de colores de Serra da Estrela.</p>
                 <p class="break-inside-avoid">Piedras, flores y musgos del paisaje inundan el círculo, atravesando las tres capas que componen la instalación.</p>
                 <p class="break-inside-avoid">Se opera mediante la desfragmentación de la imagen original, que se descompone primero en una cuadrícula modular y luego se disuelve en membranas translúcidas separadas. A través de estas funciones geométricas y de traducción espacial, la imagen deja de ser un plano estático para transformarse en una experiencia tridimensional y transitable. En su recorrido, el velo y el hilo desarticulan la rigidez del dibujo, permitiendo que la materia vegetal atraviese los vacíos y la luz en una vibración que da la vuelta completa al círculo.</p>
+            </div>
+            <!-- English -->
+            <div class="lang-en hidden max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+                <p class="break-inside-avoid"><strong>Radiación</strong><br>
+                New Hand Lab, Portugal, 2026.<br>
+                Dimensions: Ø280 cm, Ø260 cm and Ø240 cm x 135 cm high<br>
+                Hand embroidery, natural wool on veil.</p>
+                <p class="break-inside-avoid">Starting from the center of a circle, the radii expand to introduce the color palette of Serra da Estrela.</p>
+                <p class="break-inside-avoid">Stones, flowers, and mosses from the landscape flood the circle, crossing the three layers that make up the installation.</p>
+                <p class="break-inside-avoid">It operates through the defragmentation of the original image, which is first broken down into a modular grid and then dissolved into separate translucent membranes. Through these geometric functions and spatial translation, the image ceases to be a static plane to become a three-dimensional and walkable experience. Along its path, the veil and the thread dismantle the rigidity of the drawing, allowing plant matter to cross the voids and light in a vibration that completes the circle.</p>
             </div>
             <div class="mt-8 columns-2 md:columns-3 gap-4">
                 <img src="https://i.postimg.cc/HkNgfG0c/NEW-HAND-LAB.jpg" class="w-full h-auto mb-4 cursor-pointer break-inside-avoid" onclick="openLightbox(this.src)">
@@ -177,18 +228,29 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
-                <span>Volver a Proyectos</span>
+                <span class="lang-es">Volver a Proyectos</span>
+                <span class="lang-en hidden">Back to Projects</span>
             </button>
             <div class="w-full mb-8">
                 <img src="https://i.postimg.cc/0j7jNkns/DSCF4355.jpg" alt="Hilo Vegetal" class="w-full h-auto object-cover shadow-sm">
             </div>
-            <div class="max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+            <!-- Español -->
+            <div class="lang-es max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
                 <p class="break-inside-avoid"><strong>Hilo Vegetal</strong><br>
                 Galería Studio Kura, Itoshima, Japón, agosto 2025.<br>
                 Dimensiones: 100 x 57 cm<br>
                 Bordado a mano, Seda Habotai e hilos de bordar sashiko, algodón.</p>
-                <p class="break-inside-avoid">Hilos vegetales es una pieza que se adentra en el universo subterráneo de las raíces de las plantas. A través de un enfoque botánico, explora las nociones de conexión y comunicación, poniendo en relieve aquello que habitualmente permanece oculto: los vínculos invisibles que se tejen entre los individuos bajo tierra, así como el lazo esencial con la propia tierra que los sostiene y nutre.</p>
+                <p class="break-inside-avoid">Hilos vegetales es una pieza que se adentra en el universo subterráneo de las raíces de las plantas. A través de un enfoque botánico, explora las nociones de conexión y communication, poniendo en relieve aquello que habitualmente permanece oculto: los vínculos invisibles que se tejen entre los individuos bajo tierra, así como el lazo esencial con la propia tierra que los sostiene y nutre.</p>
                 <p class="break-inside-avoid">Este proyecto fue posible gracias al financiamiento del Fondo Nacional de Desarrollo Cultural y las Artes (FONDART, Chile).</p>
+            </div>
+            <!-- English -->
+            <div class="lang-en hidden max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+                <p class="break-inside-avoid"><strong>Hilo Vegetal</strong><br>
+                Studio Kura Gallery, Itoshima, Japan, August 2025.<br>
+                Dimensions: 100 x 57 cm<br>
+                Hand embroidery, Habotai Silk and sashiko embroidery threads, cotton.</p>
+                <p class="break-inside-avoid">Hilo Vegetal is a piece that delves into the underground universe of plant roots. Through a botanical approach, it explores the notions of connection and communication, highlighting what usually remains hidden: the invisible links woven between individuals underground, as well as the essential bond with the earth itself that sustains and nourishes them.</p>
+                <p class="break-inside-avoid">This project was made possible thanks to funding from the National Fund for Cultural Development and the Arts (FONDART, Chile).</p>
             </div>
             <div class="mt-8 columns-2 md:columns-3 gap-4">
                 <img src="https://i.postimg.cc/CKgk83Z1/04.jpg" class="w-full h-auto mb-4 cursor-pointer break-inside-avoid" onclick="openLightbox(this.src)">
@@ -209,12 +271,14 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
-                <span>Volver a Proyectos</span>
+                <span class="lang-es">Volver a Proyectos</span>
+                <span class="lang-en hidden">Back to Projects</span>
             </button>
             <div class="w-full mb-8">
                 <img src="https://i.postimg.cc/Prmq3Gf0/DSCF2164.jpg" alt="Pixeles Podridos" class="w-full h-auto object-cover shadow-sm">
             </div>
-            <div class="max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+            <!-- Español -->
+            <div class="lang-es max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
                 <div class="break-inside-avoid space-y-2">
                     <p><strong>Pixeles Podridos:</strong></p>
                     <ul class="list-disc pl-4 space-y-1">
@@ -232,6 +296,26 @@
                 <p class="break-inside-avoid">El proyecto nace como una exploración a distancia en torno a las naturalezas muertas de frutas, a partir de fotografías tomadas por Colomba en Chile y por mí en México. A través de este diálogo, nos interesó cuestionar las características tradicionales de la naturaleza muerta y cómo esta técnica puede entrar en relación —o en tensión— con nuestro contexto contemporáneo.</p>
                 <p class="break-inside-avoid">La exposición propone un conflicto entre lo que entendemos por “naturaleza” en la práctica artística y los modos de producción presentes en los procesos agrícolas. La muerte se hace visible allí donde los alimentos que sostienen la vida humana —y no humana— dejan de ser comestibles, dejan de alimentar.</p>
                 <p class="break-inside-avoid">El proyecto fue presentado en marzo de 2025 en la galería Escrituras Experimentales en Ciudad de México.</p>
+            </div>
+            <!-- English -->
+            <div class="lang-en hidden max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+                <div class="break-inside-avoid space-y-2">
+                    <p><strong>Pixeles Podridos:</strong></p>
+                    <ul class="list-disc pl-4 space-y-1">
+                        <li>Cabbage, Bell Pepper and Garlic</li>
+                        <li>Papaya, Mamey, seasonal fruits and dragon fruit</li>
+                        <li>Black Bananas</li>
+                        <li>Cabbage, Broccoli, Bell Pepper and garlic</li>
+                        <li>Papaya and Mamey</li>
+                    </ul>
+                </div>
+                <p class="break-inside-avoid">Mexico City and Santiago, Chile, Escrituras Experimentales Gallery, March 2025.<br><br>
+                Dimensions: 106 x 142 cm<br><br>
+                Hand embroidery on TAF canvas printed by sublimation.</p>
+                <p class="break-inside-avoid">Pixeles Podridos is a joint project with Chilean artist Colomba Pino. Embroidery is the language that brings us together and from which we have built our collaboration over the years, despite living in different places.</p>
+                <p class="break-inside-avoid">The project was born as a remote exploration around fruit still lifes, based on photographs taken by Colomba in Chile and by me in Mexico. Through this dialogue, we were interested in questioning the traditional characteristics of the still life and how this technique can enter into relationship —or tension— with our contemporary context.</p>
+                <p class="break-inside-avoid">The exhibition proposes a conflict between what we understand as "nature" in artistic practice and the production modes present in agricultural processes. Death becomes visible where the food that sustains human —and non-human— life ceases to be edible, ceases to nourish.</p>
+                <p class="break-inside-avoid">The project was presented in March 2025 at the Escrituras Experimentales gallery in Mexico City.</p>
             </div>
             <div class="mt-8 columns-2 md:columns-3 gap-4">
                 <img src="https://i.postimg.cc/SQHX176Y/DSCF2093.jpg" class="w-full h-auto mb-4 cursor-pointer break-inside-avoid" onclick="openLightbox(this.src)">
@@ -256,12 +340,14 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
-                <span>Volver a Proyectos</span>
+                <span class="lang-es">Volver a Proyectos</span>
+                <span class="lang-en hidden">Back to Projects</span>
             </button>
             <div class="w-full mb-8">
                 <img src="https://i.postimg.cc/MHhJqG6q/01.jpg" alt="Velo" class="w-full h-auto object-cover shadow-sm">
             </div>
-            <div class="max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+            <!-- Español -->
+            <div class="lang-es max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
                 <p class="break-inside-avoid"><strong>Velo</strong><br>
                 Galería Casa Lü, Ciudad de México, México. Junio 2023.</p>
                 <p class="break-inside-avoid">El proyecto comenzó con una observación sobre la flexibilidad de los textiles. La tela posee una particularidad única: aunque es un objeto sólido, tiene una flexibilidad y adaptabilidad que, en ocasiones, se asemejan al agua. La tela se mueve, se pliega, se arruga, se impregna y se adapta.</p>
@@ -269,6 +355,16 @@
                 <p class="break-inside-avoid">Esta exposición se basa en un ejercicio visual centrado en el textil: ¿qué sucede si lo consideramos un objeto de investigación? Se aborda la tela como un sujeto de estudio, y no solo como un lienzo o material. Por un lado, esto surge del interés por su comportamiento como sólido y como líquido. Por otro, busca analizar cómo este material doméstico da lugar a paisajes, a nuevos lugares a través de la observación, traducida mediante el bordado.</p>
                 <p class="break-inside-avoid">Al experimentar con diferentes materiales, la tela sufre transformaciones, como si se tratara de cualquier otra sustancia en un laboratorio. Algunas reacciones hacen que el velo pierda su flexibilidad, lo petrifican y convierten su movimiento en algo estático. Otras permiten que conserve su movimiento, modificándolo.</p>
                 <p class="break-inside-avoid">De estas observaciones nace la interpretación bordada. Abstracciones de sombra y luz, geometrías, pliegues. Bordados que representan estas formas, paisajes que resignifican el velo como nada más que un pedazo de tela.</p>
+            </div>
+            <!-- English -->
+            <div class="lang-en hidden max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+                <p class="break-inside-avoid"><strong>Velo</strong><br>
+                Casa Lü Gallery, Mexico City, Mexico. June 2023.</p>
+                <p class="break-inside-avoid">The project began with an observation about the flexibility of textiles. Fabric has a unique feature: although it is a solid object, it has a flexibility and adaptability that sometimes resembles water. The fabric moves, folds, wrinkles, permeates, and adapts.</p>
+                <p class="break-inside-avoid">The veil has always had a meaning that transcends its textile qualities. It represents femininity, virginity, chastity, and purity. It is interesting to see how a simple piece of fabric can become a faithful representation of constant oppression, disguised as lightness and semi-transparency.</p>
+                <p class="break-inside-avoid">This exhibition is based on a visual exercise centered on textiles: what happens if we consider it an object of investigation? The fabric is approached as a subject of study, and not just as a canvas or material. On the one hand, this arises from the interest in its behavior as a solid and as a liquid. On the other hand, it seeks to analyze how this domestic material gives rise to landscapes, to new places through observation, translated through embroidery.</p>
+                <p class="break-inside-avoid">By experimenting with different materials, the fabric undergoes transformations, as if it were any other substance in a laboratory. Some reactions cause the veil to lose its flexibility, petrifying it and turning its movement into something static. Others allow it to retain its movement, modifying it.</p>
+                <p class="break-inside-avoid">From these observations the embroidered interpretation is born. Abstractions of shadow and light, geometries, folds. Embroideries that represent these forms, landscapes that resignify the veil as nothing more than a piece of fabric.</p>
             </div>
             <div class="mt-8 columns-2 md:columns-3 gap-4">
                 <img src="https://i.postimg.cc/MHhJqG6q/01.jpg" class="w-full h-auto mb-4 cursor-pointer break-inside-avoid" onclick="openLightbox(this.src)">
@@ -290,13 +386,19 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
-                <span>Volver a Proyectos</span>
+                <span class="lang-es">Volver a Proyectos</span>
+                <span class="lang-en hidden">Back to Projects</span>
             </button>
             <div class="w-full mb-8">
                 <img src="https://i.postimg.cc/VL7ygDQX/IMG-8648.jpg" alt="Líquenes" class="w-full h-auto object-cover shadow-sm">
             </div>
-            <div class="max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+            <!-- Español -->
+            <div class="lang-es max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
                 <p class="break-inside-avoid">Durante 2022, tuve la oportunidad de trabajar en el taller de Juana Gómez, donde fuimos invitados a explorar nuestros intereses a través del bordado combinado con la técnica de impresión fotográfica sobre distintos textiles. El resultado de esta exploración culminó en una exposición colectiva en la galería NAC en Santiago, Chile, en colaboración con el grupo de bordadoras que formaban parte del taller. Durante el proceso creativo, decidí enfocarme en las texturas naturales del sur de Chile, particularmente en cortes de distintas cortezas de los árboles Araucaria del Parque Nacional Conguillío, ubicado en la región de La Araucanía. Las imágenes resultantes muestran cómo el color y el hilo se entrelazan y se fusionan para crear una sola imagen. Además, realicé una exploración formal de las luces, sombras y texturas de la corteza, transformándolas en figuras visibles a través del bordado.</p>
+            </div>
+            <!-- English -->
+            <div class="lang-en hidden max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+                <p class="break-inside-avoid">During 2022, I had the opportunity to work in Juana Gómez's workshop, where we were invited to explore our interests through embroidery combined with the technique of photographic printing on different textiles. The result of this exploration culminated in a collective exhibition at the NAC gallery in Santiago, Chile, in collaboration with the group of embroiderers who were part of the workshop. During the creative process, I decided to focus on the natural textures of southern Chile, particularly on cross-sections of different barks from the Araucaria trees in the Conguillío National Park, located in the Araucanía region. The resulting images show how color and thread intertwine and merge to create a single image. In addition, I carried out a formal exploration of the lights, shadows, and textures of the bark, transforming them into visible figures through embroidery.</p>
             </div>
             <div class="mt-8 columns-2 md:columns-3 gap-4">
                 <img src="https://i.postimg.cc/YqBjk2hd/Captura-de-Pantalla-2025-05-19-a-la(s)-19-49-42.png" class="w-full h-auto mb-4 cursor-pointer break-inside-avoid" onclick="openLightbox(this.src)">
@@ -324,14 +426,21 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
-                <span>Volver a Proyectos</span>
+                <span class="lang-es">Volver a Proyectos</span>
+                <span class="lang-en hidden">Back to Projects</span>
             </button>
             <div class="w-full mb-8">
                 <img src="https://i.postimg.cc/7PWQhZzy/La-poesia-no-es-un-lujo.jpg" alt="La poesía no es un lujo" class="w-full h-auto object-cover shadow-sm">
             </div>
-            <div class="max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+            <!-- Español -->
+            <div class="lang-es max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
                 <p class="break-inside-avoid">En 2022, colaboré con el colectivo «homóloga ediciones» en Santiago, Chile. Este colectivo de edición autogestionado busca establecer un vínculo entre el arte y la literatura, invitando a artistas y escritores emergentes a publicar juntos.</p>
                 <p class="break-inside-avoid">Para la publicación de marzo de 2023, trabajamos junto a Melissa Cid, quien tradujo los ensayos de Audre Lorde <em>”La poesía no es un lujo”</em> y <em>”Los usos de lo erótico”</em>. Como parte de esta colaboración, se crearon cuatro bordados que hacen referencia a las ideas presentadas por Lorde en sus ensayos, los cuales presento en las imágenes siguientes.</p>
+            </div>
+            <!-- English -->
+            <div class="lang-en hidden max-w-5xl mx-auto space-y-4 text-left md:columns-2 md:gap-8 text-xs leading-relaxed text-neutral-dark/80 mb-12">
+                <p class="break-inside-avoid">In 2022, I collaborated with the collective «homóloga ediciones» in Santiago, Chile. This self-managed editing collective seeks to establish a link between art and literature, inviting emerging artists and writers to publish together.</p>
+                <p class="break-inside-avoid">For the March 2023 publication, we worked with Melissa Cid, who translated Audre Lorde's essays <em>"La poesía no es un lujo"</em> and <em>"Los usos de lo erótico"</em>. As part of this collaboration, four embroideries were created that refer to the ideas presented by Lorde in her essays, which I present in the following images.</p>
             </div>
             <div class="mt-8 columns-2 md:columns-3 gap-4">
                 <img src="https://i.postimg.cc/CLbJ74Zm/dd5806a9-d918-41f0-8b03-c93aecfba714.jpg" class="w-full h-auto mb-4 cursor-pointer break-inside-avoid" onclick="openLightbox(this.src)">
@@ -348,16 +457,19 @@
 
         <!-- Sección de Talleres -->
         <section id="talleres" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div class="max-w-3xl mx-auto space-y-4 text-center mb-12">
-                <p class="text-xs leading-relaxed text-neutral-dark/80">
-                    Imparto talleres de bordado contemporáneo, bordado libre y técnicas tradicionales japonesas como el Boro. Estos espacios se han realizado en Santiago de Chile, Ciudad de México y París, y buscan no solo transmitir los conocimientos de la técnica, sino también generar instancias de encuentro, creación y momentos de calidad compartida.
-                </p>
-                <p class="text-xs leading-relaxed text-neutral-dark/80">
-                    Cada taller es una oportunidad para experimentar con el bordado desde una mirada contemporánea, aprender en conjunto y explorar la potencia creativa de la aguja y el hilo.
-                </p>
-                <p class="text-xs leading-relaxed text-neutral-dark/80">
-                    Si te interesa organizar un taller, participar o recibir más información, puedes contactarme directamente.
-                </p>
+            <div class="max-w-3xl mx-auto space-y-4 text-center mb-12 text-xs leading-relaxed text-neutral-dark/80">
+                <!-- Español -->
+                <div class="lang-es space-y-4">
+                    <p>Imparto talleres de bordado contemporáneo, bordado libre y técnicas tradicionales japonesas como el Boro. Estos espacios se han realizado en Santiago de Chile, Ciudad de México y París, y buscan no solo transmitir los conocimientos de la técnica, sino también generar instancias de encuentro, creación y momentos de calidad compartida.</p>
+                    <p>Cada taller es una oportunidad para experimentar con el bordado desde una mirada contemporánea, aprender en conjunto y explorar la potencia creativa de la aguja y el hilo.</p>
+                    <p>Si te interesa organizar un taller, participar o recibir más información, puedes contactarme directamente.</p>
+                </div>
+                <!-- English -->
+                <div class="lang-en hidden space-y-4">
+                    <p>I teach contemporary embroidery, free embroidery, and traditional Japanese techniques such as Boro. These spaces have been held in Santiago de Chile, Mexico City, and Paris, and seek not only to transmit the knowledge of the technique but also to generate instances of encounter, creation, and shared quality moments.</p>
+                    <p>Each workshop is an opportunity to experiment with embroidery from a contemporary perspective, learn together, and explore the creative power of the needle and thread.</p>
+                    <p>If you are interested in organizing a workshop, participating, or receiving more information, you can contact me directly.</p>
+                </div>
             </div>
             <div class="mt-8 columns-2 md:columns-3 gap-4">
                 <img src="https://i.postimg.cc/jdZqL9Tf/IMG-4438.jpg" class="w-full h-auto mb-4 cursor-pointer break-inside-avoid" onclick="openLightbox(this.src)">
@@ -393,12 +505,18 @@
                 <div class="flex flex-col items-center">
                     <img src="https://i.postimg.cc/yx7L0F8h/IMG-NHLTT2026.jpg" alt="Foto de perfil de Fernanda Urquiza" class="w-full h-auto shadow-sm cursor-pointer" onclick="openLightbox(this.src)">
                 </div>
-                <p class="text-xs text-center leading-relaxed text-neutral-dark/80">
+                <!-- Español -->
+                <p class="lang-es text-xs text-center leading-relaxed text-neutral-dark/80">
                     Mi trabajo tiene como punto de partida dos inspiraciones fundamentales. En primer lugar, el interés por el origen de las cosas. La trama que compone a un tejido simple, las pequeñas piezas que juntas forman una herramienta, los procesos químicos que separan sustancias y las transforman en otras. Esto también se ve reflejado en la naturaleza: Los diferentes componentes de un bosque, los pétalos de una planta y su relación con el tallo, las capas de tierra que podemos observar en una montaña. Este asombro y goce de entender cómo se construyen las cosas se une a mi segunda inspiración: El hacer con las manos. Una de las razones fundamentales de por qué mi proyecto artístico se basa principalmente en bordados y arte textil es el rescate del quehacer manual. Lograr texturas, formas y relieves que no se logran con otras herramientas y que tienen la virtud de ser hechas a mano es una de las principales fuentes de inspiración y el valor que le entrego a mi proceso artístico. Su esencia radica en una experimentación manual y exploración de técnicas que marcan nuestra historia.
+                </p>
+                <!-- English -->
+                <p class="lang-en hidden text-xs text-center leading-relaxed text-neutral-dark/80">
+                    My work has two fundamental inspirations as a starting point. First, the interest in the origin of things. The weave that makes up a simple fabric, the small pieces that together form a tool, the chemical processes that separate substances and transform them into others. This is also reflected in nature: the different components of a forest, the petals of a plant and their relationship with the stem, the layers of earth that we can observe on a mountain. This amazement and joy of understanding how things are built joins my second inspiration: making with my hands. One of the fundamental reasons why my artistic project is mainly based on embroidery and textile art is the rescue of manual work. Achieving textures, shapes, and reliefs that cannot be achieved with other tools and that have the virtue of being handmade is one of the main sources of inspiration and the value I give to my artistic process. Its essence lies in manual experimentation and the exploration of techniques that mark our history.
                 </p>
                 <div class="text-center space-y-2">
                     <p class="font-semibold text-base">Fernanda Sofía Urquiza Carter</p>
-                    <p class="text-xs">París, Francia y Santiago de Chile</p>
+                    <p class="text-xs lang-es">París, Francia y Santiago de Chile</p>
+                    <p class="text-xs lang-en hidden">Paris, France and Santiago, Chile</p>
                     <p class="text-xs">+33 620 36 26 82</p>
                     <div class="flex justify-center items-center space-x-4">
                         <a href="mailto:fernandaurquizac@gmail.com" class="text-neutral-dark hover:text-neutral-medium transition-colors">
@@ -423,12 +541,49 @@
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal Lightbox -->
     <div id="lightbox-modal" class="hidden fixed inset-0 bg-neutral-dark/80 z-[100] flex items-center justify-center p-4" onclick="closeLightbox()">
         <img id="lightbox-image" src="" alt="Ampliada" class="max-w-full max-h-full">
     </div>
 
     <script>
+        // Lógica de traducción de idioma
+        window.setLang = function(lang) {
+            // Manejar elementos en español
+            document.querySelectorAll('.lang-es').forEach(el => {
+                if (lang === 'es') el.classList.remove('hidden');
+                else el.classList.add('hidden');
+            });
+            // Manejar elementos en inglés
+            document.querySelectorAll('.lang-en').forEach(el => {
+                if (lang === 'en') el.classList.remove('hidden');
+                else el.classList.add('hidden');
+            });
+            
+            // Actualizar diseño de los botones "ES"
+            document.querySelectorAll('.lang-btn-es').forEach(el => {
+                if (lang === 'es') {
+                    el.classList.add('font-bold');
+                    el.classList.remove('opacity-70');
+                } else {
+                    el.classList.remove('font-bold');
+                    el.classList.add('opacity-70');
+                }
+            });
+            
+            // Actualizar diseño de los botones "EN"
+            document.querySelectorAll('.lang-btn-en').forEach(el => {
+                if (lang === 'en') {
+                    el.classList.add('font-bold');
+                    el.classList.remove('opacity-70');
+                } else {
+                    el.classList.remove('font-bold');
+                    el.classList.add('opacity-70');
+                }
+            });
+        };
+
+        // Lógica de navegación
         document.addEventListener('DOMContentLoaded', () => {
             const introScreen = document.getElementById('intro-screen');
             const mainHeader = document.getElementById('main-header');
@@ -454,6 +609,7 @@
                 });
             }
 
+            // Enlaces de navegación principal (Proyectos, Talleres, Info)
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -469,6 +625,7 @@
                 });
             });
 
+            // Enlaces de cada proyecto en la galería
             projectLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -479,6 +636,7 @@
                 });
             });
 
+            // Botones de "Volver a Proyectos"
             backBtns.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -489,6 +647,7 @@
             });
         });
 
+        // Funciones para visor de imágenes (Lightbox)
         window.openLightbox = (src) => {
             const lightbox = document.getElementById('lightbox-modal');
             const img = document.getElementById('lightbox-image');
